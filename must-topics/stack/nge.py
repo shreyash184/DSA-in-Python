@@ -4,23 +4,22 @@ from collections import deque
 # output -  [5, 25, -1, -1]
 
 def nge(list):
-    ans = [-1] * len(list)
+    n = len(list)
+    ans = [-1] * n
 
     stack = deque()
 
-    stack.append(0)
-    for i in range(1, len(list)):
-        while len(stack) > 0 and list[i] > list[stack[-1]]:
+    for i in range(0, n):
+        while len(stack) > 0 and list[stack[-1]] < list[i]:
             ans[stack[-1]] = list[i]
             stack.pop()
         stack.append(i)
 
     while len(stack) > 0:
-        topIndx = stack[-1]
-        ans[topIndx] = -1
-        stack.pop()
+        ans[stack.pop()] = -1
+    return ans
 
-    print(ans)
-
-list = [4, 5, 25, 3]
-nge(list)
+# list = [4, 5, 2, 25]
+list = [11, 4, 3, 2, 10, 12]
+# list = [10, 7, 4, 2, 9, 10, 11, 3, 2] - Dry run test case
+print(nge(list))
