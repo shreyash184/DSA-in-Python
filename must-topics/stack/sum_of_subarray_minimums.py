@@ -1,6 +1,5 @@
 from queue import deque
 
-
 def sumSubarrayMins(list):
     stack = deque()
     stack.append(-1)
