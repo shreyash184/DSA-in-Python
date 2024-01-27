@@ -1,15 +1,5 @@
 from queue import deque
 
-def prec(c):
-    if c == '^':
-        return 3
-    elif c == '*' or c == '/':
-        return 2
-    elif c == '+' or c == '-':
-        return 1
-    else:
-        return 0
-
 def isOperand(c):
     if (c >= 'a' and c <= 'z') or (c >= 'A' and c <= 'Z') or (c >= '0' and  c <= '9'):
         return 1 
