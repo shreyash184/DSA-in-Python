@@ -48,24 +48,18 @@ class Heap:
     def display(self):
         print(self.arr, sep=" ")
 
+class Solution:
+    def findKthLargest(self, nums: List[int], k: int) -> int:
+        heap = Heap()
+        
+        for i in range(k):
+            heap.insert(nums[i])
 
-    
-heap = Heap()
-heap.insert(1)
-heap.insert(3)
-heap.insert(4)
-heap.insert(5)
-heap.insert(7)
-heap.insert(6)
-heap.insert(2)
-heap.insert(8)
-heap.insert(9)
-heap.display()
+        for i in range(k, len(nums)):
+            if heap.arr[0] < nums[i]:
+                heap.remove()
+                heap.insert(nums[i])
+            
+        return heap.arr[0]
 
-for i in range(8):
-    heap.remove()
-    print(heap.get())
-
-
-
-
+        

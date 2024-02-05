@@ -51,16 +51,37 @@ class Heap:
 
     
 heap = Heap()
-heap.insert(10)
-heap.insert(5)
-heap.insert(15)
+# heap.insert(10)
+# heap.insert(5)
+# heap.insert(15)
+# heap.insert(1)
+# heap.insert(25)
+# print(heap.get())
+# heap.display()
+# heap.insert(0)
+# heap.insert(25)
+# heap.remove()
+# heap.display()
+# heap.remove()
+# heap.display()
+
+# 3,2,3,1,2,4,5,5,6
+heap.insert(3)
+heap.insert(2)
+heap.insert(3)
 heap.insert(1)
-heap.insert(25)
-print(heap.get())
+heap.insert(2)
+heap.insert(4)
+heap.insert(5)
+heap.insert(5)
+heap.insert(6)
 heap.display()
-heap.insert(0)
-heap.insert(25)
-heap.remove()
-heap.display()
-heap.remove()
-heap.display()
+k = 4
+for i in range(k-1):
+    heap.remove()
+    heap.display()
+
+print("Answer", heap.get())
+
+
+
