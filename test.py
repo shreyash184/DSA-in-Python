@@ -1,4 +1,3 @@
 # 
-
-for i in reversed(range(1, 10)):
-    print(i)
+n = 0
+print(not n)
